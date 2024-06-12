@@ -1,0 +1,131 @@
+@import 'vars'
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    text-decoration: none
+    font-family: "Exo 2", sans-serif
+    font-size: 16px
+
+body
+    width: 100vw
+    min-height: 100vh
+    background-color: $colorBodyBack
+
+.center
+    padding-left: calc(50% - 480px)
+    padding-right: calc(50% - 480px)
+
+.photo-area
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    padding: 2rem
+    align-items: center
+    &__title
+        font-size: 2rem
+        color: $colorTitle
+
+.photo-box
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 1rem
+    padding: 1rem
+    max-height: 70vh
+    background-color: $colorItemBack
+    border: 1px $colorItemBack solid
+    border-radius: 2rem
+    transition: all .3s
+    &:hover
+        box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,.3)
+        border: 1px $colorBorderHover solid
+    &__image
+        justify-self: center
+        height: 60vh
+        border-radius: 1rem
+    &__info
+        color: $colorText
+        width: 90%
+        display: flex
+        justify-content: space-between
+        &-author
+            font-size: 1rem
+    &__likes
+        display: flex
+        gap: 1rem
+        &-icon
+            cursor: pointer
+            align-self: center
+            font-size: 1.3rem
+            transition: all .3s
+            &:hover
+                color: $colorLikeHover
+            &:active
+                transform: scale(.7)
+        &-counter
+            font-size: 1rem
+
+.history-area
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 2rem
+    &__title
+        font-size: 1.5rem
+        color: $colorTitle
+
+.history-box
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 1rem
+    padding: 1rem
+    max-height: 50vh
+    background-color: $colorItemBack
+    border: 1px $colorItemBack solid
+    border-radius: 2rem
+    transition: all .3s
+    &:hover
+        box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,.3)
+        border: 1px $colorBorderHover solid
+    &:hover &__img
+        filter: brightness(40%)
+    &:hover &__info-author
+        opacity: 100%
+    &:hover &__info-likes
+        color: $colorTitle
+    &__img
+        justify-self: center
+        height: 40vh
+        border-radius: 1rem
+        transition: all .3s
+    &__info
+        color: $colorText
+        width: 90%
+        &-author
+            position: absolute
+            top: 5%
+            max-width: 70%
+            padding: 1rem
+            font-size: 1rem
+            color: $colorTitle
+            opacity: 0
+            transition: all .3s
+        &-likes
+            display: flex
+            gap: 1rem
+            font-size: 1rem
+            transition: all .3s
+
+.empty-title
+    font-size: 1.2rem
+    color: $colorText
+
+.hidden 
+    display: none
